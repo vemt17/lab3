@@ -28,8 +28,7 @@
             <li><a href="#about">About Me</a></li>
             <li><a href="#portfolio"> My Portfolio</a></li>
             <li><a href="#contact">Contact Me</a></li>
-            <li><a href="resources.php">Resources</a></li>
-            <li><a href="guests.php">Guests</a></li>           
+            <li><a href="/lab3/ci4/public/guest/">Guests</a></li>           
             <button class="btn" onclick="light()"><i class="fas fa-sun"></i></button>
             <script>function light() {document.documentElement.style.setProperty('--white', '#080808'); document.documentElement.style.setProperty('--black', '#f0fff0');}</script>
             <button class="btn" onclick="dark()"><i class="fas fa-moon"></i></button>
@@ -128,39 +127,10 @@
         <div class="info">
             <h3> <i class="fas fa-envelope"></i> vmtan@student.apc.edu.ph</h3>
             <h3> <i class="fas fa-map-marker-alt"></i> Parañaque, Philippines - 1711. </h3>
+            <button onclick="location.href='/lab3/ci4/public/guest/create'" class="btn"> Create guest entry <i class="fas fa-paper-plane"></i> </button> 
         </div>
 
     </div>
-    <?php
-    // define variables and set to empty values
-    $name = $email = $project = $message = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $name = test_input($_POST["name"]);
-      $email = test_input($_POST["email"]);
-      $project = test_input($_POST["project"]);
-      $message = test_input($_POST["message"]);
-    }
-
-    function test_input($data) {
-      $data = trim($data);
-      $data = stripslashes($data);
-      $data = htmlspecialchars($data);
-      return $data;
-    }
-    ?>
-
-    <form method="post" action="form.php">  
-      <input type="text" name="name" placeholder="Name" class="box">
-      <br><br>
-      <input type="email" name="email" placeholder="Email" class="box">
-      <br><br>
-      <input type="text" name="project" placeholder="Project" class="box">
-      <br><br>
-      <textarea name="message" id="" cols="30" rows="10" class="box message" placeholder="Message"></textarea>
-      <br><br>
-      <button type="submit" name="submit" value="Submit" class="btn"> Submit <i class="fas fa-paper-plane"></i> </button>
-    </form>  
 </div>
 </section>
 

@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php echo link_tag('css/mystyle.css'); ?>
-    <title>CodeIgniter Tutorial</title>
+    <title>My Profile</title>
 </head>
 <body>
 
